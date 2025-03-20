@@ -1,0 +1,118 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.card {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    padding: 10px 20px;
+}
+
+.table {
+    background: white;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.btn {
+    border-radius: 5px;
+}
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Register Page */
+.register-container {
+    background: url('images/hospital_register_bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-box {
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+}
+
+.register-box h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.register-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.register-box button {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.register-box button:hover {
+    background: #0056b3;
+}
+
+/* Appointments Page */
+.appointment-container {
+    background: url('images/hospital_appointment_bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.appointment-box {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+}
+
+.appointment-box h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.appointment-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.appointment-box button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.appointment-box button:hover {
+    background: #1e7e34;
+}
