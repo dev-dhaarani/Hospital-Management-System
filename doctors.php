@@ -1,6 +1,10 @@
 <?php
-include 'db.php';
-session_start();
+include 'db.php'; // Ensure db.php does not start session multiple times
+
+// Check if session is already active before starting a new one
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 // Check if user is logged in
 if (!isset($_SESSION['username'])) {
@@ -11,7 +15,12 @@ if (!isset($_SESSION['username'])) {
 // Fetch all doctors from the database
 $query = "SELECT * FROM doctors";
 $result = $conn->query($query);
+
+if (!$result) {
+    die("Error fetching doctors: " . $conn->error);
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

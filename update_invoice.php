@@ -3,12 +3,16 @@ include 'db.php';
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
+
+    // Ensure $id is an integer to prevent SQL injection
+    $id = intval($id);
+
     $query = "SELECT * FROM invoices WHERE id = $id";
     $result = mysqli_query($conn, $query);
     $invoice = mysqli_fetch_assoc($result);
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($id)) {
     $patient_name = $_POST['patient_name'];
     $contact = $_POST['contact'];
     $doctor = $_POST['doctor'];
@@ -23,6 +27,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_query($conn, $query)) {
         echo "Invoice Updated!";
         header("Location: invoices.php");
+        exit(); // Ensure header redirection works properly
+    }
+}
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($id)) {
+    $patient_name = $_POST['patient_name'];
+    $contact = $_POST['contact'];
+    $doctor = $_POST['doctor'];
+    $treatment = $_POST['treatment'];
+    $amount = $_POST['amount'];
+    $date = $_POST['date'];
+
+    $query = "UPDATE invoices SET 
+              patient_name='$patient_name', contact='$contact', doctor='$doctor',
+              treatment='$treatment', amount='$amount', date='$date' WHERE id=$id";
+
+    if (mysqli_query($conn, $query)) {
+        echo "Invoice Updated!";
+        header("Location: invoices.php");
+        exit(); // Ensure header redirection works properly
     }
 }
 ?>

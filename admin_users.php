@@ -22,7 +22,7 @@ if (isset($_GET['delete_id'])) {
 }
 
 // Fetch all admin users
-$adminQuery = "SELECT * FROM admins";
+$adminQuery = "SELECT * FROM users";
 $result = $conn->query($adminQuery);
 ?>
 
